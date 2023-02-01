@@ -45,14 +45,14 @@ toDoForm.addEventListener("submit", onToDoSubmit);
 // };
 
 const savedToDos = localStorage.getItem("TODOS_KEY");
-console.log(savedToDos);
+// console.log(savedToDos);
 
 // const parsedToDos = JSON.parse(savedToDos);
 // console.log(parsedToDos)
 
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
-  console.log(parsedToDos);
+  // console.log(parsedToDos);
   // parsedToDos.forEach(showParsedToDos);
   // parsedToDos.forEach((item) => {
   //   console.log("savedToDOs", item);
