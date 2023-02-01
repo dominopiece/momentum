@@ -15,6 +15,11 @@ const saveToDos = () => {
 const deleteToDo = (event) => {
   const li = event.target.parentElement;
   li.remove();
+  // .filter는 true만 반환 !== 삭제할 대상
+  toDos = toDos.filter((toDo) => {
+      return toDo.id !== parseInt(li.id); // return 없을 경우 새로 고침시 버그 발생 {}, return 제거 또는 return 삽입
+  });
+  saveToDos();
 };
 
 const paintToDo = (newToDo) => {
@@ -35,7 +40,7 @@ const onToDoSubmit = (event) => {
   event.preventDefault();
   const newToDo = toDoInput.value;
   toDoInput.value = "";
-  // 
+  //
   const newToDoObj = {
     id: Date.now(),
     text: newToDo,
